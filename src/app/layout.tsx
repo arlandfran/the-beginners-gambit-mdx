@@ -1,3 +1,4 @@
+import { Pager } from "@/components/pager";
 import { SidebarNav } from "@/components/sidebar-nav";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -36,6 +37,7 @@ export default function RootLayout({
             <SidebarNav />
             <main className="prose prose-sm prose-slate w-full py-8 dark:prose-invert prose-h1:mb-0 prose-lead:my-0">
               {children}
+              <Pager />
             </main>
           </div>
         </ThemeProvider>
