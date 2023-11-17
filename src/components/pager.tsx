@@ -36,7 +36,7 @@ export function Pager() {
   }
 
   return (
-    <div className="flex flex-row items-center justify-between">
+    <div className="mt-16 flex flex-row items-center justify-between">
       {pager?.prev?.href && (
         <Link
           href={pager.prev.href}
