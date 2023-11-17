@@ -15,7 +15,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Callout,
     Chessboard,
     Link: ({ ...props }: ComponentProps<typeof Link>) => <Link {...props} />,
-    ...components,
     Skeleton,
+    ...components,
   };
 }
