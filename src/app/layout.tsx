@@ -34,7 +34,7 @@ export default function RootLayout({
           <SiteHeader />
           <div className="container flex flex-1 gap-8">
             <SidebarNav />
-            <main className="prose prose-sm w-full py-8 dark:prose-invert">
+            <main className="prose prose-sm prose-slate w-full py-8 dark:prose-invert">
               {children}
             </main>
           </div>
