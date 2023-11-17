@@ -6,6 +6,8 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 const withMDX = createMDX({
