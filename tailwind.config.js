@@ -2,7 +2,7 @@
 module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
-  content: ["./src/**/*.{js,jsx,ts,tsx,mdx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx,mdx}", "./mdx-components.tsx"],
   theme: {
     container: {
       center: true,
