@@ -1,0 +1,305 @@
+---
+title: Movement
+description: How does each piece move on the board
+---
+
+# {meta.title}
+
+<p className="lead">{meta.description}</p>
+
+export function Marker() {
+  return (
+    <svg viewBox="0 0 10 10">
+      <ellipse cx="5" cy="5" rx="2" ry="2" opacity="0.6" />
+    </svg>
+  );
+}
+
+## Things to remember
+
+- Pieces cannot move onto squares occupied by their own pieces.
+- Pieces cannot jump over other pieces. The only exceptions are <Link href="/docs/rules/movement#knight">knights</Link> & <Link href="/docs/rules/special-moves#castling">castling</Link>.
+- Pieces can move into vacant squares or squares occupied by opponent pieces by capturing them.
+- If a piece is captured it is permanently removed from the game.
+- The **King** is the only piece that cannot be captured. It can only be put in check and you cannot make any moves that would purposely put the king in check.
+
+## King
+
+<Chessboard fen="8/8/8/8/3K4/8/8/8 w - - 0 1">
+  <div slot="d5">
+    <Marker />
+  </div>
+  <div slot="e5">
+    <Marker />
+  </div>
+  <div slot="e4">
+    <Marker />
+  </div>
+  <div slot="e3">
+    <Marker />
+  </div>
+  <div slot="d3">
+    <Marker />
+  </div>
+  <div slot="c3">
+    <Marker />
+  </div>
+  <div slot="c4">
+    <Marker />
+  </div>
+  <div slot="c5">
+    <Marker />
+  </div>
+</Chessboard>
+
+**Movement:** One square horizontally, vertically or diagonally.
+
+**Special moves:** <Link href="/docs/rules/special-moves#castling">Castling</Link>
+
+## Queen
+
+<Chessboard fen="8/8/8/8/3Q4/8/8/8 w - - 0 1">
+  <div slot="d5">
+    <Marker />
+  </div>
+  <div slot="d6">
+    <Marker />
+  </div>
+  <div slot="d7">
+    <Marker />
+  </div>
+  <div slot="d8">
+    <Marker />
+  </div>
+  <div slot="e5">
+    <Marker />
+  </div>
+  <div slot="f6">
+    <Marker />
+  </div>
+  <div slot="g7">
+    <Marker />
+  </div>
+  <div slot="h8">
+    <Marker />
+  </div>
+  <div slot="e4">
+    <Marker />
+  </div>
+  <div slot="f4">
+    <Marker />
+  </div>
+  <div slot="g4">
+    <Marker />
+  </div>
+  <div slot="h4">
+    <Marker />
+  </div>
+  <div slot="e3">
+    <Marker />
+  </div>
+  <div slot="f2">
+    <Marker />
+  </div>
+  <div slot="g1">
+    <Marker />
+  </div>
+  <div slot="d3">
+    <Marker />
+  </div>
+  <div slot="d2">
+    <Marker />
+  </div>
+  <div slot="d1">
+    <Marker />
+  </div>
+  <div slot="c3">
+    <Marker />
+  </div>
+  <div slot="b2">
+    <Marker />
+  </div>
+  <div slot="a1">
+    <Marker />
+  </div>
+  <div slot="c4">
+    <Marker />
+  </div>
+  <div slot="b4">
+    <Marker />
+  </div>
+  <div slot="a4">
+    <Marker />
+  </div>
+  <div slot="c5">
+    <Marker />
+  </div>
+  <div slot="b6">
+    <Marker />
+  </div>
+  <div slot="a7">
+    <Marker />
+  </div>
+</Chessboard>
+
+**Movement:** Any number of vacant squares horizontally, vertically or diagonally.
+
+## Rook
+
+<Chessboard fen="8/8/8/8/3R4/8/8/8 w - - 0 1">
+  <div slot="d5">
+    <Marker />
+  </div>
+  <div slot="d6">
+    <Marker />
+  </div>
+  <div slot="d7">
+    <Marker />
+  </div>
+  <div slot="d8">
+    <Marker />
+  </div>
+  <div slot="e4">
+    <Marker />
+  </div>
+  <div slot="f4">
+    <Marker />
+  </div>
+  <div slot="g4">
+    <Marker />
+  </div>
+  <div slot="h4">
+    <Marker />
+  </div>
+  <div slot="d3">
+    <Marker />
+  </div>
+  <div slot="d2">
+    <Marker />
+  </div>
+  <div slot="d1">
+    <Marker />
+  </div>
+  <div slot="c4">
+    <Marker />
+  </div>
+  <div slot="b4">
+    <Marker />
+  </div>
+  <div slot="a4">
+    <Marker />
+  </div>
+</Chessboard>
+
+**Movement:** Any number of vacant squares horizontally or vertically.
+
+**Special moves:** <Link href="/docs/rules/special-moves#castling">Castling</Link>
+
+## Bishop
+
+<Chessboard fen="8/8/8/8/3B4/8/8/8 w - - 0 1">
+  <div slot="e5">
+    <Marker />
+  </div>
+  <div slot="f6">
+    <Marker />
+  </div>
+  <div slot="g7">
+    <Marker />
+  </div>
+  <div slot="h8">
+    <Marker />
+  </div>
+  <div slot="e3">
+    <Marker />
+  </div>
+  <div slot="f2">
+    <Marker />
+  </div>
+  <div slot="g1">
+    <Marker />
+  </div>
+  <div slot="c3">
+    <Marker />
+  </div>
+  <div slot="b2">
+    <Marker />
+  </div>
+  <div slot="a1">
+    <Marker />
+  </div>
+  <div slot="c5">
+    <Marker />
+  </div>
+  <div slot="b6">
+    <Marker />
+  </div>
+  <div slot="a7">
+    <Marker />
+  </div>
+</Chessboard>
+
+**Movement:** Any number of vacant squares diagonally.
+
+## Knight
+
+<Chessboard fen="8/8/8/8/3N4/8/8/8 w - - 0 1">
+  <div slot="e6">
+    <Marker />
+  </div>
+  <div slot="f5">
+    <Marker />
+  </div>
+  <div slot="f3">
+    <Marker />
+  </div>
+  <div slot="e2">
+    <Marker />
+  </div>
+  <div slot="c2">
+    <Marker />
+  </div>
+  <div slot="b3">
+    <Marker />
+  </div>
+  <div slot="b5">
+    <Marker />
+  </div>
+  <div slot="c6">
+    <Marker />
+  </div>
+</Chessboard>
+
+**Movement:** Any vacant square not on the same rank, file or diagonal. This is easiest to remember as an L shape.
+
+<Callout title="Note:">
+
+This piece is the only piece that can jump over other pieces, regardless of color.
+
+</Callout>
+
+## Pawn
+
+<Chessboard fen="8/8/8/8/8/8/3PP3/8 w - - 0 1">
+  <div slot="d3">
+    <Marker />
+  </div>
+  <div slot="e3">
+    <Marker />
+  </div>
+  <div slot="e4">
+    <Marker />
+  </div>
+</Chessboard>
+
+**Movement:** One square forward if it is vacant.
+
+**Special moves:** <Link href="/docs/rules/special-moves#en-passant">En Passant</Link>, <Link href="/docs/rules/special-moves#promotion">Promotion</Link>
+
+<Callout title="Note:">
+
+- This piece cannot move backwards
+- Can only capture diagonnally
+- Has the option to move one or two squares on its first move if the squares are vacant.
+
+</Callout>

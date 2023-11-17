@@ -9,10 +9,12 @@ interface Props {
 
 export function Callout({ icon, title, children }: Props) {
   return (
-    <Alert>
+    <Alert className="my-4">
       {icon && icon}
-      {title && <AlertTitle className="font-semibold">{title}</AlertTitle>}
-      <AlertDescription className="not-prose">{children}</AlertDescription>
+      {title && <AlertTitle className="mb-2 font-semibold">{title}</AlertTitle>}
+      <AlertDescription className="prose-p:my-0 prose-ol:my-0 prose-ul:my-0">
+        {children}
+      </AlertDescription>
     </Alert>
   );
 }
