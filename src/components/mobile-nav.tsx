@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { docsConfig } from "@/config/docs";
+import { siteLinks } from "@/config/links";
 import { EnterIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -36,7 +36,7 @@ export function MobileNav() {
           </SheetTitle>
           <SheetDescription asChild>
             <div className="flex flex-col gap-6 text-left">
-              {docsConfig.sideNav.map((item, index) => (
+              {siteLinks.map((item, index) => (
                 <section key={index} className="flex flex-col gap-2">
                   <h4 className="text-base font-medium">{item.title}</h4>
                   {item.items.map((item, index) => (

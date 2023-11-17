@@ -1,6 +1,6 @@
 "use client";
 
-import { docsConfig } from "@/config/docs";
+import { siteLinks } from "@/config/links";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ export function SidebarNav() {
 
   return (
     <aside className="hidden min-w-fit gap-4 p-8 sm:flex sm:flex-col">
-      {docsConfig.sideNav.map((item, index) => (
+      {siteLinks.map((item, index) => (
         <section key={index} className="flex flex-col gap-1">
           <h4 className="text-sm font-semibold">{item.title}</h4>
           {item.items.map((item, index) => (
