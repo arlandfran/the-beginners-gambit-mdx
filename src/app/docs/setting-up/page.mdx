@@ -1,0 +1,55 @@
+---
+title: Setting up the chessboard
+description: If you're playing physically that is
+---
+
+# {meta.title}
+
+<p className="lead">{meta.description}</p>
+
+### 1. Orient the board
+
+<Chessboard>
+  <div slot="h1">
+    <svg viewBox="0 0 10 10" stroke="green" strokeWidth="0.5" fill="none">
+      <ellipse cx="5" cy="5" rx="4" ry="4" />
+    </svg>
+  </div>
+  <div slot="a8">
+    <svg viewBox="0 0 10 10" stroke="green" strokeWidth="0.5" fill="none">
+      <ellipse cx="5" cy="5" rx="4" ry="4" />
+    </svg>
+  </div>
+</Chessboard>
+
+Both players should have a light square on the bottom right corner on their side. This makes it so the queen is always placed on it's own colored square.
+
+<Callout title="Note:">
+
+Two common terms you will encounter regarding the chess board are _ranks_ and _files_. These simply reference the rows and columns on the chessboard respectively.
+
+</Callout>
+
+### Place the pawns
+
+<Chessboard fen="8/pppppppp/8/8/8/8/PPPPPPPP/8 w - - 0 1" />
+
+White pawns go across the _2nd rank_ and black pawns across the _7th rank_.
+
+### Place the rooks
+
+<Chessboard fen="r6r/pppppppp/8/8/8/8/PPPPPPPP/R6R w - - 0 1" />
+
+Rooks go on the corners of the board on their respective sides.
+
+### Place the knights and bishops
+
+<Chessboard fen="rnb2bnr/pppppppp/8/8/8/8/PPPPPPPP/RNB2BNR w - - 0 1" />
+
+The knight and bishop are what's known as _minor pieces_. The knights go next to the rooks and the bishops the square after.
+
+### Place the king and queen
+
+<Chessboard fen="start" />
+
+The queen is always placed on a square of it's own color. The king slots into the last remaining square.

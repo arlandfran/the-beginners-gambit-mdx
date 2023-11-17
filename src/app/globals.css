@@ -73,4 +73,16 @@
   body {
     @apply bg-background text-foreground;
   }
+  g-chess-board {
+    --square-color-dark: hsl(200 17% 61%);
+    --square-color-light: hsl(207 16% 89%);
+    --square-color-dark-active: hsl(200 96% 65%);
+    --square-color-dark-hover: hsl(200 96% 65%);
+    --outline-color-dark-active: hsl(200 96% 35%);
+    --square-color-light-active: hsl(207 83% 82%);
+    --square-color-light-hover: hsl(207 83% 82%);
+    --outline-color-light-active: hsl(207 83% 62%);
+    --move-target-marker-color-dark-square: hsl(217 94% 23%);
+    --move-target-marker-color-light-square: hsl(217 94% 23%);
+  }
 }
