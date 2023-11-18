@@ -42,8 +42,8 @@ export function Castling() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <Callout title="Try me!" icon={<HandIcon />} className="my-0 w-fit">
-        Move the king to C1 or G1 to castle in that direction
+      <Callout title="Try me!" icon={<HandIcon />} className="my-0 w-full">
+        Drag the king to C1 or G1 to castle in that direction
       </Callout>
       <Chessboard
         fen={fen}
