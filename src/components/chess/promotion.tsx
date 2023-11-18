@@ -75,7 +75,7 @@ export function Promotion() {
   return (
     <Popover open={showPromotionDialog}>
       <Callout title="Try me!" icon={<HandIcon />} className="w-full">
-        Promote the pawn by moving to the end of the board or capturing the
+        Promote the pawn by moving it to the end of the board or capturing the
         rook.
       </Callout>
       <PopoverAnchor asChild>
