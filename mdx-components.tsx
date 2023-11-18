@@ -23,6 +23,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Chessboard,
     EnPassant,
     Link: ({ ...props }: ComponentProps<typeof Link>) => <Link {...props} />,
+    Marker: () => (
+      <svg viewBox="0 0 10 10">
+        <ellipse cx="5" cy="5" rx="2" ry="2" opacity="0.6" />
+      </svg>
+    ),
     PlayMoves,
     Promotion,
     Skeleton,

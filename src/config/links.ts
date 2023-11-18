@@ -41,8 +41,8 @@ export const siteLinks = [
         href: "/docs/concepts/game-phases",
       },
       {
-        title: "Pawn Structure",
-        href: "/docs/concepts/pawn-structure",
+        title: "Pawn Structures",
+        href: "/docs/concepts/pawn-structures",
       },
       {
         title: "Opening Principles",
