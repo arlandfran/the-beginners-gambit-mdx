@@ -10,6 +10,18 @@ export function Marker() {
     </svg>
   );
 }
+// prettier-ignore
+export const kingSquares = ["d5", "e5", "e4", "e3", "d3", "c3", "c4", "c5"];
+// prettier-ignore
+export const queenSquares = ["d5","d6","d7","d8","e5","f6","g7","h8","e4","f4","g4","h4","e3","f2","g1","d3","d2","d1","c3","b2","a1","c4","b4","a4","c5","b6","a7",];
+// prettier-ignore
+export const rookSquares = ["d5","d6","d7","d8","e4","f4","g4","h4","d3","d2","d1","c4","b4","a4"]
+// prettier-ignore
+export const bishopSquares = ["e5","f6","g7","h8","e3","f2","g1","c3","b2","a1","c5","b6","a7",];
+// prettier-ignore
+export const knightSquares = ["e6","f5","f3","e2","c2","b3","b5","c6"];
+// prettier-ignore
+export const pawnSquares = ["d3","e3","e4"]
 
 # {meta.title}
 
@@ -23,251 +35,84 @@ export function Marker() {
 - If a piece is captured it is permanently removed from the game.
 - The **King** is the only piece that cannot be captured. It can only be put in check and you cannot make any moves that would purposely put the king in check.
 
+<section className="max-w-sm mx-auto">
+
 ## King
 
 <Chessboard fen="8/8/8/8/3K4/8/8/8 w - - 0 1">
-  <div slot="d5">
-    <Marker />
-  </div>
-  <div slot="e5">
-    <Marker />
-  </div>
-  <div slot="e4">
-    <Marker />
-  </div>
-  <div slot="e3">
-    <Marker />
-  </div>
-  <div slot="d3">
-    <Marker />
-  </div>
-  <div slot="c3">
-    <Marker />
-  </div>
-  <div slot="c4">
-    <Marker />
-  </div>
-  <div slot="c5">
-    <Marker />
-  </div>
+  {kingSquares.map((square) => (
+    <div key={square} slot={square}>
+      <Marker />
+    </div>
+  ))}
 </Chessboard>
 
 **Movement:** One square horizontally, vertically or diagonally.
 
 **Special moves:** <Link href="/docs/rules/special-moves#castling">Castling</Link>
 
+</section>
+
+<section className="max-w-sm mx-auto">
+
 ## Queen
 
 <Chessboard fen="8/8/8/8/3Q4/8/8/8 w - - 0 1">
-  <div slot="d5">
-    <Marker />
-  </div>
-  <div slot="d6">
-    <Marker />
-  </div>
-  <div slot="d7">
-    <Marker />
-  </div>
-  <div slot="d8">
-    <Marker />
-  </div>
-  <div slot="e5">
-    <Marker />
-  </div>
-  <div slot="f6">
-    <Marker />
-  </div>
-  <div slot="g7">
-    <Marker />
-  </div>
-  <div slot="h8">
-    <Marker />
-  </div>
-  <div slot="e4">
-    <Marker />
-  </div>
-  <div slot="f4">
-    <Marker />
-  </div>
-  <div slot="g4">
-    <Marker />
-  </div>
-  <div slot="h4">
-    <Marker />
-  </div>
-  <div slot="e3">
-    <Marker />
-  </div>
-  <div slot="f2">
-    <Marker />
-  </div>
-  <div slot="g1">
-    <Marker />
-  </div>
-  <div slot="d3">
-    <Marker />
-  </div>
-  <div slot="d2">
-    <Marker />
-  </div>
-  <div slot="d1">
-    <Marker />
-  </div>
-  <div slot="c3">
-    <Marker />
-  </div>
-  <div slot="b2">
-    <Marker />
-  </div>
-  <div slot="a1">
-    <Marker />
-  </div>
-  <div slot="c4">
-    <Marker />
-  </div>
-  <div slot="b4">
-    <Marker />
-  </div>
-  <div slot="a4">
-    <Marker />
-  </div>
-  <div slot="c5">
-    <Marker />
-  </div>
-  <div slot="b6">
-    <Marker />
-  </div>
-  <div slot="a7">
-    <Marker />
-  </div>
+  {queenSquares.map((square) => (
+    <div key={square} slot={square}>
+      <Marker />
+    </div>
+  ))}
 </Chessboard>
 
 **Movement:** Any number of vacant squares horizontally, vertically or diagonally.
 
+</section>
+
+<section className="max-w-sm mx-auto">
+
 ## Rook
 
 <Chessboard fen="8/8/8/8/3R4/8/8/8 w - - 0 1">
-  <div slot="d5">
-    <Marker />
-  </div>
-  <div slot="d6">
-    <Marker />
-  </div>
-  <div slot="d7">
-    <Marker />
-  </div>
-  <div slot="d8">
-    <Marker />
-  </div>
-  <div slot="e4">
-    <Marker />
-  </div>
-  <div slot="f4">
-    <Marker />
-  </div>
-  <div slot="g4">
-    <Marker />
-  </div>
-  <div slot="h4">
-    <Marker />
-  </div>
-  <div slot="d3">
-    <Marker />
-  </div>
-  <div slot="d2">
-    <Marker />
-  </div>
-  <div slot="d1">
-    <Marker />
-  </div>
-  <div slot="c4">
-    <Marker />
-  </div>
-  <div slot="b4">
-    <Marker />
-  </div>
-  <div slot="a4">
-    <Marker />
-  </div>
+  {rookSquares.map((square) => (
+    <div key={square} slot={square}>
+      <Marker />
+    </div>
+  ))}
 </Chessboard>
 
 **Movement:** Any number of vacant squares horizontally or vertically.
 
 **Special moves:** <Link href="/docs/rules/special-moves#castling">Castling</Link>
 
+</section>
+
+<section className="max-w-sm mx-auto">
+
 ## Bishop
 
 <Chessboard fen="8/8/8/8/3B4/8/8/8 w - - 0 1">
-  <div slot="e5">
-    <Marker />
-  </div>
-  <div slot="f6">
-    <Marker />
-  </div>
-  <div slot="g7">
-    <Marker />
-  </div>
-  <div slot="h8">
-    <Marker />
-  </div>
-  <div slot="e3">
-    <Marker />
-  </div>
-  <div slot="f2">
-    <Marker />
-  </div>
-  <div slot="g1">
-    <Marker />
-  </div>
-  <div slot="c3">
-    <Marker />
-  </div>
-  <div slot="b2">
-    <Marker />
-  </div>
-  <div slot="a1">
-    <Marker />
-  </div>
-  <div slot="c5">
-    <Marker />
-  </div>
-  <div slot="b6">
-    <Marker />
-  </div>
-  <div slot="a7">
-    <Marker />
-  </div>
+  {bishopSquares.map((square) => (
+    <div key={square} slot={square}>
+      <Marker />
+    </div>
+  ))}
 </Chessboard>
 
 **Movement:** Any number of vacant squares diagonally.
 
+</section>
+
+<section className="max-w-sm mx-auto">
+
 ## Knight
 
 <Chessboard fen="8/8/8/8/3N4/8/8/8 w - - 0 1">
-  <div slot="e6">
-    <Marker />
-  </div>
-  <div slot="f5">
-    <Marker />
-  </div>
-  <div slot="f3">
-    <Marker />
-  </div>
-  <div slot="e2">
-    <Marker />
-  </div>
-  <div slot="c2">
-    <Marker />
-  </div>
-  <div slot="b3">
-    <Marker />
-  </div>
-  <div slot="b5">
-    <Marker />
-  </div>
-  <div slot="c6">
-    <Marker />
-  </div>
+  {knightSquares.map((square) => (
+    <div key={square} slot={square}>
+      <Marker />
+    </div>
+  ))}
 </Chessboard>
 
 **Movement:** Any vacant square not on the same rank, file or diagonal. This is easiest to remember as an L shape.
@@ -278,18 +123,18 @@ This piece is the only piece that can jump over other pieces, regardless of colo
 
 </Callout>
 
+</section>
+
+<section className="max-w-sm mx-auto">
+
 ## Pawn
 
 <Chessboard fen="8/8/8/8/8/8/3PP3/8 w - - 0 1">
-  <div slot="d3">
-    <Marker />
-  </div>
-  <div slot="e3">
-    <Marker />
-  </div>
-  <div slot="e4">
-    <Marker />
-  </div>
+  {pawnSquares.map((square) => (
+    <div key={square} slot={square}>
+      <Marker />
+    </div>
+  ))}
 </Chessboard>
 
 **Movement:** One square forward if it is vacant.
@@ -303,3 +148,5 @@ This piece is the only piece that can jump over other pieces, regardless of colo
 - Has the option to move one or two squares on its first move if the squares are vacant.
 
 </Callout>
+
+</section>
