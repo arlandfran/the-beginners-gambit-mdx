@@ -1,4 +1,5 @@
 import { Callout } from "@/components/callout";
+import { Castling } from "@/components/chess/castling";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
@@ -13,6 +14,7 @@ const Chessboard = dynamic(() => import("@/components/chessboard"), {
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     Callout,
+    Castling,
     Chessboard,
     Link: ({ ...props }: ComponentProps<typeof Link>) => <Link {...props} />,
     Skeleton,

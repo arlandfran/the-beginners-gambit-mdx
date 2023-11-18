@@ -41,6 +41,9 @@ dependencies:
   '@types/mdx':
     specifier: ^2.0.10
     version: 2.0.10
+  chess.js:
+    specifier: 1.0.0-beta.6
+    version: 1.0.0-beta.6
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1475,6 +1478,10 @@ packages:
 
   /character-reference-invalid@2.0.1:
     resolution: {integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==}
+    dev: false
+
+  /chess.js@1.0.0-beta.6:
+    resolution: {integrity: sha512-sqBfX1VL3csSyqVM5ogbKA+aRlZyWDh276ruWXphwI0lDUMs7iYjZs29BOi49f7mXeunJE7cdfnIZhihsyLnsA==}
     dev: false
 
   /chokidar@3.5.3:

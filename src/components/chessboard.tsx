@@ -8,6 +8,12 @@ const GChessboard = createComponent({
   tagName: "g-chess-board",
   elementClass: GChessBoardElement,
   react: React,
+  events: {
+    onMoveStart: "movestart",
+    onMoveEnd: "moveend",
+    onMoveFinished: "movefinished",
+    onMoveCancel: "movecancel",
+  },
 });
 
 export default function Chessboard({
