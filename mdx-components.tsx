@@ -1,6 +1,7 @@
 import { Callout } from "@/components/callout";
 import { Castling } from "@/components/chess/castling";
 import { EnPassant } from "@/components/chess/en-passant";
+import { PlayMoves } from "@/components/chess/play-moves";
 import { Promotion } from "@/components/chess/promotion";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { MDXComponents } from "mdx/types";
@@ -22,6 +23,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Chessboard,
     EnPassant,
     Link: ({ ...props }: ComponentProps<typeof Link>) => <Link {...props} />,
+    PlayMoves,
     Promotion,
     Skeleton,
     ...components,
