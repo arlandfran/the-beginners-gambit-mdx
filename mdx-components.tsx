@@ -7,7 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import type { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ComponentProps } from "react";
+import { ComponentProps, HTMLAttributes } from "react";
 
 const Chessboard = dynamic(() => import("@/components/chessboard"), {
   ssr: false,
@@ -23,8 +23,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Chessboard,
     EnPassant,
     Link: ({ ...props }: ComponentProps<typeof Link>) => <Link {...props} />,
-    Marker: () => (
-      <svg viewBox="0 0 10 10">
+    Marker: ({ ...props }: HTMLAttributes<SVGElement>) => (
+      <svg viewBox="0 0 10 10" {...props}>
         <ellipse cx="5" cy="5" rx="2" ry="2" opacity="0.6" />
       </svg>
     ),
