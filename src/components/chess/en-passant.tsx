@@ -73,6 +73,7 @@ export function EnPassant() {
           game.undo();
           setFen(game.fen());
           setInteractive(true);
+          setError(false);
         }}
       >
         Reset
