@@ -8,7 +8,9 @@ import { ComponentProps } from "react";
 
 const Chessboard = dynamic(() => import("@/components/chessboard"), {
   ssr: false,
-  loading: () => <Skeleton className="aspect-square h-auto w-full max-w-sm" />,
+  loading: () => (
+    <Skeleton className="mx-auto aspect-square h-auto w-full max-w-sm" />
+  ),
 });
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

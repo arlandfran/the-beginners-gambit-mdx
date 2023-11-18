@@ -21,7 +21,7 @@ export default function Chessboard({
   ...props
 }: React.ComponentProps<typeof GChessboard>) {
   return (
-    <div className="w-fit max-w-sm overflow-hidden rounded-lg">
+    <div className="mx-auto w-fit max-w-sm overflow-hidden rounded-lg">
       <GChessboard coordinates="outside" {...props} />
     </div>
   );
