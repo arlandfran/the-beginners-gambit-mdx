@@ -13,7 +13,7 @@ const Chessboard = dynamic(() => import("@/components/chessboard"), {
   ),
 });
 
-export function PlayMoves(moves: string[]) {
+export function PlayMoves({ moves }: { moves: string[] }) {
   const [fen, setFen] = useState(moves[0]);
   const [movesIndex, setMovesIndex] = useState(0);
 
@@ -48,7 +48,7 @@ export function PlayMoves(moves: string[]) {
             setFen(moves[movesIndex + 1]);
             setMovesIndex((movesIndex) => movesIndex + 1);
           }}
-          disabled={movesIndex === Object.keys(moves).length - 1}
+          disabled={movesIndex === moves.length - 1}
         >
           <ArrowRightIcon />
         </Button>

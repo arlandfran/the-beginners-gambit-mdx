@@ -3,28 +3,7 @@ title: Game phases
 description: The opening, middle and endgame
 ---
 
-export const operaMoves = [
-  "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 1",
-  "1Q2kb1r/p2n1ppp/4q3/4p1B1/4P3/8/PPP2PPP/2KR4 b k - 1 1",
-  "1n2kb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2KR4 w k - 0 2",
-  "1n1Rkb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2K5 b k - 1 2",
-];
-
-export const openingTempoMoves = [
-  "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1",
-  "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 1",
-  "rnbqkbnr/ppp2ppp/8/3pp3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 2",
-  "rnbqkbnr/ppp2ppp/8/3pp3/4P3/1B6/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
-];
-
-export const gainingTempoMoves = [
-  "r1br2k1/p3ppbp/2p3p1/q7/1PB2Pn1/P1N1B3/2P3PP/1R2QRK1 b - - 0 1",
-  "r1br2k1/p3ppbp/2p3p1/7q/1PB2Pn1/P1N1B3/2P3PP/1R2QRK1 w - - 1 2",
-  "r1br2k1/p3ppbp/2p3p1/7q/1PB2Pn1/P1N1B2P/2P3P1/1R2QRK1 b - - 0 2",
-  "r1br2k1/p3ppbp/2p3p1/7q/1PB2P2/P1N1n2P/2P3P1/1R2QRK1 w - - 0 3",
-  "r1br2k1/p3ppbp/2p3p1/7q/1PB2P2/P1N1Q2P/2P3P1/1R3RK1 b - - 0 3",
-  "r1br2k1/p3pp1p/2p3p1/7q/1PBb1P2/P1N1Q2P/2P3P1/1R3RK1 w - - 1 4",
-];
+import { operaGame, openingTempo, gainingTempo } from "@/lib/moves";
 
 # {meta.title}
 
@@ -82,7 +61,7 @@ Different from a material advantage, piece activity is more of an abstract conce
 
 Probably the most famous example of this is the famous [Opera Game](https://en.wikipedia.org/wiki/Opera_Game), played between Paul Morphy and a duo of european noblemen, Duke Karl and Count Isuoard.
 
-<PlayMoves {...operaMoves} />
+<PlayMoves moves={operaGame} />
 
 _Notice here that white is down material, but almost all of it's pieces are active. Black's kingside on the other hand is not in the game. Morhpy won this game is just in a few more moves._
 
@@ -94,13 +73,13 @@ In chess, a tempo is regarded as a _turn_ or _move_. The concept of tempo is imp
 
 The benefit of gaining a tempo is that it enables a player to develop their pieces more swiftly and effectively. In the opening part of a game, this usually results in a lead in development.
 
-<PlayMoves {...openingTempoMoves} />
+<PlayMoves moves={openingTempo} />
 
 _This is a example showcasing how white can lose tempo with what looks like a simple developing move. The reason this is a mistake is black can simply play pawn to d5 and now white has to waste a tempo bringing the bishop to safety._
 
 Tempo is also gained when you make a move that forces your opponent to respond. The more you can force your opponent to respond to your moves is less time for them setting up their own strategies and attacks.
 
-<PlayMoves {...gainingTempoMoves} />
+<PlayMoves moves={gainingTempo} />
 
 In the above example black wants to play knight takes bishop E3. Why? Because after the queen takes back, then black can play bishop D4 - an absolute pin on white's queen.
 

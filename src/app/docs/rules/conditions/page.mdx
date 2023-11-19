@@ -3,13 +3,7 @@ title: Conditions
 description: How do you win a game of chess?
 ---
 
-export const moves = [
-  "r4rk1/2q5/p1b2pp1/1p1p4/3P3Q/8/PPPB1PP1/2K4R w - - 0 1",
-  "r4rkQ/2q5/p1b2pp1/1p1p4/3P4/8/PPPB1PP1/2K4R b - - 1 1",
-  "r4r1Q/2q2k2/p1b2pp1/1p1p4/3P4/8/PPPB1PP1/2K4R w - - 2 2",
-  "r4r2/2q2k1Q/p1b2pp1/1p1p4/3P4/8/PPPB1PP1/2K4R b - - 3 2",
-  "r3kr2/2q4Q/p1b2pp1/1p1p4/3P4/8/PPPB1PP1/2K4R w - - 4 3",
-];
+import { resignation } from "@/lib/moves";
 
 # {meta.title}
 
@@ -39,7 +33,7 @@ This is checkmate for white as:
 
 A player in a losing position may wish to resign and concede the game if they decide they objectively cannot save the position.
 
-<PlayMoves {...moves} />
+<PlayMoves moves={resignation} />
 
 _Black resigns in this position as after the white queen delivers check on H8, the black king is forced to F7, and after another check on H7, delivers check while also winning black's queen._
 
