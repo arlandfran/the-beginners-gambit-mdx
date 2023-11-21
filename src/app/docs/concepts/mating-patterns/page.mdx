@@ -1,0 +1,163 @@
+---
+title: Mating patterns
+description: a.k.a checkmate combinations
+---
+
+import { steinitzGame } from "@/lib/moves";
+
+# {meta.title}
+
+<p className="lead">{meta.description}</p>
+
+In chess there are several patterns that occur in checkmates, and they occur frequently enough that they all have their own names.
+
+Learning these patterns are important as they will help you recognise the possibilities of checkmate when they arise in your games.
+
+There are many checkmate patterns out there but here are some of the ones that a beginner should know.
+
+## Queen combinations
+
+The queen is the most deadly of pieces for performing a checkmate - at close range, the queen can trap the enemy king at the side of the board and cover all the king's escape squares by itself. Despite this power, the queen can still be captured like any other piece, so usually the queen relies on the support of a second piece when delivering checkmate.
+
+For beginners the most common queen mates will occur on the H7 and G7 squares, however you can apply these queen combinations from anywhere on the board if you have the pieces available .
+
+<Chessboard fen="5rk1/5ppp/8/8/8/8/8/8 w - - 0 1">
+  <DangerMarker slot="h7" />
+  <DangerMarker slot="g7" />
+</Chessboard>
+
+This is a normal, healthy kingside pawn structure for Black, and though it's usually quite safe, experienced players understand that H7 is vulnerable since it is only defended by its King. This means that if white's queen can attack H7 with the protection of one of its other pieces, white can look for checkmate.
+
+<Chessboard fen="5rk1/5pbp/6p1/8/8/8/8/8 w - - 0 1">
+  <DangerMarker slot="h6" />
+  <DangerMarker slot="g7" />
+  <DangerMarker slot="f6" />
+</Chessboard>
+
+This structure is usually seen when Black [fianchettos](https://en.wikipedia.org/wiki/Fianchetto) their dark squared bishop, as illustrated in the next above. If you are able to remove the dark squared bishop from play or the bishop is not on that diagonal, then that means the F6, G7, H6 squares are all potentially vulnerable.
+
+### Queen and knight
+
+<div className="flex flex-col gap-4">
+
+<Chessboard
+  fen="5rk1/5ppp/8/6N1/8/7Q/8/2K5 w - - 0 1"
+  arrows={[{ from: "h3", to: "h7" }]}
+/>
+
+<Chessboard
+  fen="5rk1/5p1p/6pQ/5N2/8/8/8/2K5 w - - 0 1"
+  arrows={[{ from: "h6", to: "g7" }]}
+/>
+
+</div>
+
+### Queen and bishop
+
+<div className="flex flex-col gap-4">
+
+<Chessboard
+  fen="5rk1/5ppp/8/8/4Q3/8/2B5/2K5 w - - 0 1"
+  arrows={[{ from: "e4", to: "h7" }]}
+/>
+
+<Chessboard
+  fen="5rk1/5p1p/6p1/8/3Q4/8/1B6/2K5 w - - 0 1"
+  arrows={[{ from: "d4", to: "g7" }]}
+/>
+
+</div>
+
+### Queen and pawn
+
+<div className="flex flex-col gap-4">
+
+<Chessboard
+  fen="5rk1/5ppp/6P1/8/8/7Q/8/2K5 w - - 0 1"
+  arrows={[{ from: "h3", to: "h7" }]}
+/>
+
+<Chessboard
+  fen="5rk1/5p1p/5PpQ/8/8/8/8/2K5 w - - 0 1"
+  arrows={[{ from: "h6", to: "g7" }]}
+/>
+
+</div>
+
+## Rook combinations
+
+Rooks are less powerful than the queen, and therefore usually need at least one other piece to cover the enemy king's escape squares.
+
+### Two rook mate
+
+<Chessboard
+  fen="2R2k2/1R6/8/8/8/8/6K1/8 w - - 0 1"
+  arrows={[
+    { from: "c8", to: "h8" },
+    { from: "b7", to: "h7" },
+  ]}
+/>
+
+This is a pattern that commonly appears in the end game. The example above is most commonly referred to as the the ladder mate as you force the king to move file-by-file until it is checkmate. But there are multiple ways you can mate your opponent utilising the cutting off of files with your rooks.
+
+<Chessboard
+  fen="6r1/2b1r2k/2p5/1pPp1p2/pP1P1P2/P1R5/7P/2B2BRK w - - 0 1"
+  arrows={[{ from: "c3", to: "h3" }]}
+/>
+
+_White's rook to H3 is checkmate as the entire G file is cut off by the rook on G1 and black has no pieces to block the check. You can also execute this mate with a queen rather than a rook._
+
+### Back rank mate
+
+The back rank checkmate is another common pattern that occurs when a king is trapped behind its own pawns and gets mated by either a rook or queen.
+
+<Chessboard fen="6k1/5ppp/8/8/8/8/5PPP/3q2K1 w - - 0 1" />
+
+In most situations the pawn shield does a great job to protect the king, but you should be aware of the potential back rank weakness.
+
+One way to deal with this weakness is to play a move known as creating _luft_ (German word for “air”), a chess term which means you open an escape square for your king, usually by advancing the G or H pawn one square.
+
+<Chessboard
+  fen="3R2k1/5p1p/6p1/8/2q5/7P/5PP1/B5K1 w - - 0 1"
+  arrows={[{ from: "a1", to: "h8" }]}
+/>
+
+_In this example black's king cannot escape to G7 as the square is cut off by white's bishop on A1._
+
+## Smothered mates
+
+The smothered mate is a checkmate pattern that is only possible if the enemy king is completely surrounded by his own pieces. It also features the unique jumping ability of the knight. Though a unique checkmate, it is a surprisingly common checkmate.
+
+<Chessboard fen="6rk/5Npp/8/8/8/8/8/6K1 w - - 0 1">
+  <CheckMarker slot="h8" />
+</Chessboard>
+
+_You can see that black is completely blocked in by its own pieces and has no way to capture the knight therefore leading to checkmate._
+
+<Chessboard
+  fen="r1bqkb1r/pp1npppp/2pN1n2/8/8/3P4/PPP1QPPP/R1B1KBNR w KQkq - 0 1"
+  arrows={[
+    { from: "d6", to: "e8" },
+    { from: "e2", to: "e8" },
+  ]}
+/>
+
+_This example showcasing the queen and knight working together illustrates a typical manoeuvre used to execute the smothered checkmate._
+
+## Suffocation mate
+
+The suffocation mate is a variation of the smothered mate but involves the use of a bishop (or queen) and knight to execute.
+
+<Chessboard
+  fen="5rk1/4Np1p/8/8/8/8/8/B5K1 w - - 0 1"
+  arrows={[
+    { from: "e7", to: "g8" },
+    { from: "a1", to: "h8" },
+  ]}
+/>
+
+_Here the king is mostly obstructed by its own pieces and the white bishop covers the only open squares from a distance._
+
+<PlayMoves moves={steinitzGame} />
+
+_This was a game the first official world chess champion, Wilhelm Steinitz, played blindfolded. Here you can see that a smothered check is possible through knight to E7 but it is defended by black's queen. However Steinitz brilliantly played rook to G3, delivering check and forcing black to capture the rook with queen to G3, removing the defender of the E7 square. With this white can finally play knight to E7 and deliver a suffocation mate._

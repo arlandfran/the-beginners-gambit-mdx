@@ -114,3 +114,9 @@ export const removeThePawn = [
   "6k1/npp1rpqp/p2p4/2bP1Q2/7R/5BP1/P4P1P/6K1 w - - 1 3",
   "6k1/npp1rpqp/p2p4/2bP1Q2/6R1/5BP1/P4P1P/6K1 b - - 2 3",
 ];
+export const steinitzGame = [
+  "r5kr/2q2p1p/p1N2p1B/1pp5/8/1PPPR3/1P3PPP/R2Q2K1 w - - 0 1",
+  "r5kr/2q2p1p/p1N2p1B/1pp5/8/1PPP2R1/1P3PPP/R2Q2K1 b - - 1 1",
+  "r5kr/5p1p/p1N2p1B/1pp5/8/1PPP2q1/1P3PPP/R2Q2K1 w - - 0 2",
+  "r5kr/4Np1p/p4p1B/1pp5/8/1PPP2q1/1P3PPP/R2Q2K1 b - - 1 2",
+];
