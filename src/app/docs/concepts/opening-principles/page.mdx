@@ -48,14 +48,12 @@ Why? Well pieces placed in the center have more mobility, threaten more squares 
 
 <Chessboard fen="8/8/8/3N3n/8/8/8/8 w - - 0 1">
   {whiteKnightMarkers.map((square) => (
-    <div key={square} slot={square} className="bg-red-400/75">
-      <Marker fill="yellow" />
-    </div>
+    <DangerMarker key={square} slot={square}>
+      <MoveMarker fill="yellow" />
+    </DangerMarker>
   ))}
   {blackKnightMarkers.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 
