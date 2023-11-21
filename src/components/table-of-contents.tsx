@@ -13,7 +13,7 @@ export function TableOfContents() {
       contentSelector: ".content",
       headingSelector: "h2, h3",
       listClass: "flex flex-col gap-1",
-      listItemClass: "w-fit",
+      listItemClass: "w-fit flex flex-col gap-1",
       activeLinkClass: "font-medium text-foreground",
       headingsOffset: 160,
       scrollSmooth: false,
