@@ -33,9 +33,7 @@ export const pawnSquares = ["d3","e3","e4"]
 
 <Chessboard fen="8/8/8/8/3K4/8/8/8 w - - 0 1">
   {kingSquares.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 
@@ -51,9 +49,7 @@ export const pawnSquares = ["d3","e3","e4"]
 
 <Chessboard fen="8/8/8/8/3Q4/8/8/8 w - - 0 1">
   {queenSquares.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 
@@ -67,9 +63,7 @@ export const pawnSquares = ["d3","e3","e4"]
 
 <Chessboard fen="8/8/8/8/3R4/8/8/8 w - - 0 1">
   {rookSquares.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 
@@ -85,9 +79,7 @@ export const pawnSquares = ["d3","e3","e4"]
 
 <Chessboard fen="8/8/8/8/3B4/8/8/8 w - - 0 1">
   {bishopSquares.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 
@@ -101,9 +93,7 @@ export const pawnSquares = ["d3","e3","e4"]
 
 <Chessboard fen="8/8/8/8/3N4/8/8/8 w - - 0 1">
   {knightSquares.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 
@@ -123,9 +113,7 @@ This piece is the only piece that can jump over other pieces, regardless of colo
 
 <Chessboard fen="8/8/8/8/8/8/3PP3/8 w - - 0 1">
   {pawnSquares.map((square) => (
-    <div key={square} slot={square}>
-      <Marker />
-    </div>
+    <MoveMarker key={square} slot={square} />
   ))}
 </Chessboard>
 

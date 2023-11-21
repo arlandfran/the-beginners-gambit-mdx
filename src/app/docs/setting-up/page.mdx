@@ -10,16 +10,8 @@ description: If you're playing physically that is
 ### 1. Orient the board
 
 <Chessboard>
-  <div slot="h1">
-    <svg viewBox="0 0 10 10" stroke="green" strokeWidth="0.5" fill="none">
-      <ellipse cx="5" cy="5" rx="4" ry="4" />
-    </svg>
-  </div>
-  <div slot="a8">
-    <svg viewBox="0 0 10 10" stroke="green" strokeWidth="0.5" fill="none">
-      <ellipse cx="5" cy="5" rx="4" ry="4" />
-    </svg>
-  </div>
+  <CircleMarker slot="a8" />
+  <CircleMarker slot="h1" />
 </Chessboard>
 
 Both players should have a light square on the bottom right corner on their side. This makes it so the queen is always placed on it's own colored square.
