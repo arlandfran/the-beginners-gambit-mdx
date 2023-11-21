@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Pager } from "@/components/pager";
 import { SidebarNav } from "@/components/sidebar-nav";
 import { SiteHeader } from "@/components/site-header";
@@ -36,6 +37,7 @@ export default function RootLayout({
           <div className="container flex flex-1 gap-8">
             <SidebarNav />
             <main className="prose prose-sm prose-slate mx-auto w-full py-8 dark:prose-invert prose-h1:mb-0 prose-lead:my-0">
+              <Breadcrumbs />
               {children}
               <Pager />
             </main>
