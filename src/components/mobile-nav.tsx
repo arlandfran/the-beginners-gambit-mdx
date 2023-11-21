@@ -31,7 +31,7 @@ export function MobileNav() {
       <SheetContent side="left">
         <SheetHeader className="ml-6 gap-4">
           <SheetTitle className="text-left" aria-label="The Beginner's Gambit">
-            The Beg<span className="-mx-[2px] font-serif">&#9823;&#xFE0E;</span>
+            The Beg<span className="font-serif">&#9823;&#xFE0E;</span>
             nner&apos;s Gambit
           </SheetTitle>
           <SheetDescription asChild>

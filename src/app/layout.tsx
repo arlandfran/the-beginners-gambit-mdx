@@ -7,9 +7,15 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const quivira = localFont({
+  src: "./quivira.ttf",
+  display: "swap",
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
   title: "The Beginner's Gambit",
@@ -25,8 +31,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "flex min-h-screen flex-col antialiased",
-          inter.className,
+          "flex min-h-screen flex-col font-sans antialiased",
+          inter.variable,
+          quivira.variable,
         )}
       >
         <ThemeProvider
