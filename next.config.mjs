@@ -1,4 +1,5 @@
 import createMDX from "@next/mdx";
+import rehypeExternalLinks from "rehype-external-links";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
@@ -16,6 +17,9 @@ const withMDX = createMDX({
       remarkFrontmatter,
       // Configure frontmatter data export to meta e.g. meta.title
       [remarkMdxFrontmatter, { name: "meta" }],
+    ],
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: "_blank", rel: "noopener noreferrer" }],
     ],
   },
 });
