@@ -1,0 +1,98 @@
+---
+title: Pawn structures
+description: Five basic structures you need to know
+---
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+export const isolatedSquares = ["a7", "b2", "d4"];
+export const doubledSquares = ["e5", "e6", "f2", "f3"];
+export const backwardSquares = ["c6", "e3"];
+export const connectedSquares = ["b7", "c6", "d5", "d4", "e3", "f2"];
+export const islandSquares = ["a2", "b2", "f7", "g7", "h7"];
+export const passedSquares = ["g6", "g7", "g8"];
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+Pawn structures are more of an intermediate concept but it's something to keep in mind as you start to gain experience with chess. A pawn structure is the configuration of pawns on the chess board and since pawns are the least mobile of all the pieces, the structure is mainly static during the opening and middle phases of the game.
+
+Pawns are the only pieces in the game that cannot move backwards, so it's very important to not leave any weaknesses in your pawn structure for the enemy to exploit. A strong pawn structure is advantageous as the pawns can defend themselves, and your pieces don't have to be anchored defending pawns when they can available for more useful purposes.
+
+## Isolated pawns
+
+Isolated pawns are pawns that don't have any pawns on either side of them. Here they don't have support from other pawns and if they are attacked they will require support from their pieces.
+
+In this example white has two isolated pawns and black has one:
+
+<Chessboard fen="8/p6p/4p1p1/5p2/3P4/8/1P3PPP/8 w - - 0 1">
+  {isolatedSquares.map((square) => (
+    <DangerMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+One thing to keep in mind is that although isolated pawns are generally weak, the open files next to them increases the mobility of your pieces, particularly for the rooks that enjoy open files.
+
+## Doubled pawns
+
+Doubled-pawns are two pawns that are stacked on top of each other. The main weakness of doubled-pawns lies in the fact that the rear pawn is restricted in its movement and also cannot defend the pawn in front of him.
+
+<Chessboard fen="8/ppp2p1p/4p1p1/4p3/8/3P1P2/PPP2PPP/8 w - - 0 1">
+  {doubledSquares.map((square) => (
+    <DangerMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+Like isolated pawns, there are advantages in having an open file, and in some situations having doubled pawns can work together to control important squares like the center.
+
+## Backward pawns
+
+Backward pawns are pawns that:
+
+- Cannot be protected by other pawns since it is further back than the other pawns.
+
+- The squares in front are controlled by the opponent which means it cannot move forward without being captured.
+
+<Chessboard fen="8/p4p1p/2p3p1/3p4/3P1P2/1P2P3/P5PP/8 w - - 0 1">
+  {backwardSquares.map((square) => (
+    <DangerMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+## Connected pawns
+
+Connected pawns are pawns that have a pawn on either side of it. Connected pawns can usually defend each other and they are therefore considered strong. At the start of the game all the pawns are connected but as the game continues and some exchanges are made, the pawns become disconnected/weaker.
+
+<Chessboard fen="8/pp3ppp/2p5/3p4/3P4/4P3/PP3PPP/8 w - - 0 1">
+  {connectedSquares.map((square) => (
+    <div key={square} slot={square} className="h-full w-full bg-green-600/75" />
+  ))}
+  {islandSquares.map((square) => (
+    <DangerMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+When a group of pawns gets disconnected from the rest of the pawn structure - they become a pawn-island. In the example illustration above both white and black have two pawn islands each. Generally, the more pawn islands you have the weaker your pawn structure becomes, because you need resources to defend those pawn islands.
+
+## Passed pawns
+
+A passed pawn is a pawn that cannot be confronted by any enemy pawns. Passed pawns are very valuable strategic assets since your opponent will often have to allocate at least one piece to prevent the passed pawn from advancing even further.
+
+<Chessboard fen="8/8/4p3/p2p1pP1/P2P1P1P/1P6/8/8 w - - 0 1">
+  <div slot="g5" className="h-full w-full bg-green-600/75" />
+  {passedSquares.map((square) => (
+    <div key={square} slot={square}>
+      <MoveMarker />
+    </div>
+  ))}
+</Chessboard>
+
+When a passed pawn is supported by another pawn (as in the example above) it is called a protected passed pawn. A protected passed pawn is usually more valuable than an unprotected passed pawn.
+
+A protected passed pawn is an advantage that gives you a good chance of winning the game even if you are a pawn or two behind in material.
+
+These are the main patterns and concepts related to pawns. If you're presented with an opportunity to capture a piece, it's good practise to capture toward the center, as the more squares you control in the center, the less space your opponent has to manoeuvre around.

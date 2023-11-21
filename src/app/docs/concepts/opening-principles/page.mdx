@@ -1,0 +1,130 @@
+---
+title: Opening principles
+description: Some guiding chess principles that a beginner should follow
+---
+
+import {
+  trappedKnight,
+  trappedQueen,
+  discoveredAttack,
+  kingSafety,
+  drawByRepitition,
+} from "@/lib/moves";
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+export const whiteKnightMarkers = ["e7", "f6", "f4", "e3", "c3", "b4", "b6", "c7"]; // prettier-ignore
+export const blackKnightMarkers = ["g3", "g7"];
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+<Callout title="Important!">
+
+Please note that these aren't strict rules and there will be situations that will be exceptions to these principles. But as they say, you must first master the rules before you can break them!
+
+</Callout>
+
+## Develop your pieces
+
+Development of your pieces is **the most important rule** beginners should follow in the opening.
+
+The aim of developing is to get your pieces out as fast possible. A common mistake beginners make is only utilising a few pieces of on their board, never bringing their other pieces into play unless it's to reinforce or recapture another piece.
+
+A player that is able to get a lead in development has an advantage as it's their pieces that are in position to attack first.
+
+There isn't a strict order when it comes to development, but it's generally best to develop your knights and bishops before your queen and rooks. It's also sound to develop the knight and bishop on the side you want to castle so you can get your king castled quickly.
+
+<Chessboard fen="8/8/8/8/3P1B2/2PBPN2/PP1N1PPP/R2QK2R w KQ - 0 1" />
+
+In this example notice that the center pawns and all of the minor pieces have been developed toward the center and the king is ready to castle kingside. This is a common beginner-friendly opening called the [London system](https://simplifychess.com/london-system/).
+
+A good way to ensure that you're developing your pieces is to make sure that all of your knights and bishops have been developed by move ten.
+
+## Control the center
+
+Just like how having the high ground is advantageous in real battle, being able to control the center is advantageous on the chess board.
+
+Why? Well pieces placed in the center have more mobility, threaten more squares on the board and attacks focused on the center tend to be effective.
+
+<Chessboard fen="8/8/8/3N3n/8/8/8/8 w - - 0 1">
+  {whiteKnightMarkers.map((square) => (
+    <DangerMarker key={square} slot={square}>
+      <MoveMarker fill="yellow" />
+    </DangerMarker>
+  ))}
+  {blackKnightMarkers.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+_This classic example demonstrates how effective a knight in the center can be compared to a knight on the edge of the board. The white knight controls double the squares of the black knight, and is also controlling two of the squares the black knight can jump to further limiting its mobility._
+
+The center most commonly refers to the squares **D4, D5, E4, E5.**
+Just as how knights are much more effective in the center, bishops and pawns are also very effective in the center.
+
+Putting pawns in the center cramps the opponent and removes their options.
+
+If you control the center squares, you can begin thinking about working pieces into strong points on the opponent's side of the board. Pawns on the the 5th rank can protect pieces on the 6th and so on. Being able to have pieces in the center can allow for some dangerous attacks if the opponent isn't careful.
+
+<Chessboard fen="r1bqkb1r/2pppp2/np4pn/p6p/2BPPB2/2N2N2/PPP2PPP/R2QK2R w KQkq - 0 1" />
+
+_This is a rather extreme example but a common mistake beginners make is not developing towards the center. You can see here that white is completely developed with strong center control and the king ready to castle. On the other side black's center control is non-existent and it's knights are poorly placed with little mobility._
+
+## Avoid moving the same piece twice
+
+Ideally you should complete your development before moving a piece twice. In the opening, it's really important that you don't waste time when instead you could be developing pieces that are still in their starting squares. The only time you should move the same piece twice is if it's to capture another piece. Remember you need to have all of your pieces in play to win.
+
+<PlayMoves moves={trappedKnight} />
+
+_An exaggerated example but not unheard of in games between beginner players. Here black is chased around by white's pieces, losing time and at the same time helping develop white's pieces. By the end, the knight is left with no squares to move and is trapped completely._
+
+## Don't bring out your queen too early
+
+Now the queen is the exception when it comes to early development. When you bring out the queen too early, the enemy can attack the queen with pieces less valuable than it and force you to waste tempo or worse, get your queen trapped.
+
+Ideally you should bring out the queen after castling your king to safety. Once your minor pieces have been developed, your queen can better co-ordinate with your pieces to orchestrate attacks.
+
+<PlayMoves moves={trappedQueen} />
+
+_Here's an example how bringing out your queen too early can lead to disaster. By moving to C6, white delivers an absolute pin on black's king forcing black to take the bishop and losing the queen._
+
+## Connecting your rooks
+
+To connect your rooks means to clear the space between them. For this to happen, all your minor pieces should be developed, your queen activated and your king castled.
+
+Having that back rank clear allows your rooks to easily move back and forth along it. This can be for defensive purposes or to support a pawn push. Centralising your rooks can also be effective if the opponent has not developed their queen yet.
+
+<PlayMoves moves={discoveredAttack} />
+
+_Here notice that white's rooks is on the same file as black's queen. This is an example of a 'discovered attack' on black's queen. After white's bishop delivers check on H7, it opens the file up for the rook to attack the queen and black cannot defend the queen as it has to capture the bishop._
+
+## King safety
+
+King safety is one of the most critical strategic concepts in chess. Having an unsafe king can be a losing disadvantage because it could lead to checkmate, and an exposed king doesn't have any protection against checks and threats from enemy pieces either.
+
+<PlayMoves moves={kingSafety} />
+
+_In this example the position is equal in material but white's king is totally exposed. Black can play a tempo move like rook to E4 and white cannot block as the queen is more valuable than the rook and white also loses it's castling privileges._
+
+Exposed kings are a big weakness as they can:
+
+- Allow your opponent to gain tempo/development moves by putting your king in check
+
+- Be victim to a tactic such as a fork or skewer if left exposed.
+
+- Get checked. When a king is in check, most of the other pieces become momentarily useless. In other words, when your king is in check your other pieces becomes mere “spectators” until the check against your king is dealt with.
+
+Since the king is the most important piece in the game, keeping the king safe is critical. The easiest way to do this is to castle early. This achieves two objectives.
+
+1. The king moved away from the center of the board. The center is usually the part of the board that opens up first. Since both players are fighting for control of the center, the center pawns often get exchanged - which opens up files in the middle of the board.
+
+2. It also helps you to develop a rook by bringing it out of the corner and connects your rooks.
+
+<PlayMoves moves={drawByRepitition} />
+
+_Notice in this example that black is actually up in material but has left its king exposed and vulnerable. Even though black has a big advantage in material, white is able to force a draw by repetition because the king is exposed._

@@ -1,0 +1,97 @@
+---
+title: Game phases
+description: The opening, middle and endgame
+---
+
+import { operaGame, openingTempo, gainingTempo } from "@/lib/moves";
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+---
+
+Now that you've learnt the rules, it's time to take a look at some core concepts that you should understand as a beginner.
+
+Understanding these concepts will not only improve your gameplay but also increase your enjoyment of the game as you naturally improve, learn to spot tactics and win games. So let's take a look!
+
+---
+
+The game can be divided into three phases. Each phase has its own strategic concerns and a lot of theory has been explored over the years on each of these phases.
+
+<Steps>
+
+### The opening
+
+The opening refers to the first moves of the game. There are three main strategic aims in the opening:
+
+1. Develop your pieces
+2. Control the center
+3. Bring your king to safety
+
+Development of your pieces simply means moving them from their starting squares onto more advantageous squares, and control of the center is another important opening principle that can be achieved by developing your pieces toward the center. Castling is the most common way of getting your king to safety and castling early is recommended as an exposed king can lead to troublesome attacks if your're not careful.
+
+### The middlegame
+
+There isn't a defined point at which the game transitions from the opening to the middlegame, but generally it's when most or all of the pieces have moved from their starting squares and the king has been moved to safety.
+
+The middlegame is the most exciting part of chess as it's the phase of the game that feels most like a strategic battle. There are no set rules on the best way to approach the middle game, as there are so many different positions that can occur on the board.
+
+It's all about tactics, tactics, tactics. And the player that can come up with and co-ordinate the best combination of moves will win the game.
+
+### The endgame
+
+Similar to the middlegame there isn't an exact definition of when the game transitions into the endgame, but at this stage most of the pieces will have been captured, the kings are active and it becomes more difficult to deliver checkmate.
+
+This usually shifts the the strategic focus from attacking the king to escorting your pawns to the end of the board to promote to a queen.
+
+</Steps>
+
+## Material Advantage
+
+Throughout a game, one way to determine which player player is winning is evaluating their material advantage. Each piece in the game has an assigned value relative to that of a pawn which is worth 1 point.
+
+Knights & bishops are both worth 3 points. Rooks are worth 5 points and the queen 9 points.
+
+The king does not have a value because it cannot be captured, though it is able to capture other pieces if able.
+
+While the piece values are not formally part of the rules, being able to calculate material will help you recognise when an exchange is winning, when you have a material advantage on the board and to execute multiple attacks on the enemy king with your material lead.
+
+Do keep in mind however that the objective of the game is to checkmate the king, not win the most material.
+
+## Piece activity
+
+Different from a material advantage, piece activity is more of an abstract concept. A player can have less material than their opponent yet have more active pieces, which can lead to a decisive advantage.
+
+Probably the most famous example of this is the famous [Opera Game](https://en.wikipedia.org/wiki/Opera_Game), played between Paul Morphy and a duo of european noblemen, Duke Karl and Count Isuoard.
+
+<PlayMoves moves={operaGame} />
+
+_Notice here that white is down material, but almost all of it's pieces are active. Black's kingside on the other hand is not in the game. Morhpy won this game is just in a few more moves._
+
+The main takeaway here is to aim to continually increase the value of your pieces by developing them to more active squares. For example, Knights are stronger in the center as opposed to the edge of the board. Remember active pieces have more firepower than poorly developed ones.
+
+## Tempo
+
+In chess, a tempo is regarded as a _turn_ or _move_. The concept of tempo is important in chess as when one player gains a tempo, it effectively means that his opponent has been forced to waste one or more moves. This is usually done by developing a piece that attacks another piece of greater value, this results in the more valuable piece having to move or be captured.
+
+The benefit of gaining a tempo is that it enables a player to develop their pieces more swiftly and effectively. In the opening part of a game, this usually results in a lead in development.
+
+<PlayMoves moves={openingTempo} />
+
+_This is a example showcasing how white can lose tempo with what looks like a simple developing move. The reason this is a mistake is black can simply play pawn to d5 and now white has to waste a tempo bringing the bishop to safety._
+
+Tempo is also gained when you make a move that forces your opponent to respond. The more you can force your opponent to respond to your moves is less time for them setting up their own strategies and attacks.
+
+<PlayMoves moves={gainingTempo} />
+
+In the above example black wants to play knight takes bishop E3. Why? Because after the queen takes back, then black can play bishop D4 - an absolute pin on white's queen.
+
+But first, white is currently threatening to take black's queen on A5. Here black can play queen to H5. This move not only brings the the queen to safety but also threatens checkmate at the same time.
+
+Thus white is forced to defend against it, getting black the tempo it needs to play knight takes bishop E3.

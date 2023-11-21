@@ -1,0 +1,177 @@
+---
+title: Tactics
+description: Chess is 99% tactics - Richard Teichmann
+---
+
+import {
+  earlyKnightFork,
+  pawnFork,
+  queenDiscoveryAttack,
+  removeTheBishop,
+  removeThePawn,
+} from "@/lib/moves";
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+Now that you've gone through some opening principles for the opening, the midgame is all about coming up with tactics and combinations to attack the opponent king.
+
+There are varying definitions for what constitutes a tactic or a combination but the simplest way to think of these two concepts as a beginner is that a tactic in chess is a move or series of moves that give you an advantage on the board, whether its material gain or an attack that leads to checkmate.
+
+A combination is thought of as a forced sequence of moves that involves a sacrifice of a piece that either leads to checkmate or a clear advantage.
+
+Let's take a look at some of the most common tactical motifs that you should be familiar with.
+
+## Forks
+
+A fork _also known as a double attack_ is a tactic where a piece threatens to capture more than one piece at the same time. It's most commonly executed with a knight but you can fork with a rook, bishop, queen, even a pawn.
+
+An illustrative example of a knight threatening two pieces at once:
+
+<Chessboard
+  fen="8/8/2k1q3/8/3N4/8/8/8 w - - 0 1"
+  arrows={[
+    { from: "d4", to: "c6" },
+    { from: "d4", to: "e6" },
+  ]}
+/>
+
+A fork is a powerful tactic because it is usually hard for your opponent to defend against two threats at once if the knight that is forking cannot be captured.
+
+If one of the pieces being forked is a king and the attacking knight cannot be captured, then the other piece is a guaranteed capture as the king has to move out of check.
+
+<PlayMoves moves={earlyKnightFork} />
+
+_In this example black doesn't pay attention to the threat of a fork on the F7 square and allows the knight to capture the pawn forking both the queen and the rook. The king cannot capture as the knight is defended by the bishop and so black's only response is to move the queen to safety while the rook is lost._
+
+<PlayMoves moves={pawnFork} />
+
+_Here pawn to D3 will fork both of black's minor pieces. Black cannot defend both and so it has to get one to safety while the other is lost._
+
+## Pins
+
+A pin is a tactic in which a piece is inhibited from moving because doing so would expose the more valuable piece behind it to the threat of capture. If the piece behind was the king then it would be known as an _absolute pin_ as the piece being pinned would be unable to move as it would put the king in check. A regular pin would be referred to as a _relative pin_ and is when the piece shielded by the pinned piece is a piece other than the king, but usually more valuable than the pinned piece.
+
+<Chessboard
+  fen="2k2q2/2q2b2/8/8/8/8/8/2R2R2 w - - 0 1"
+  arrows={[
+    { from: "c1", to: "c8" },
+    { from: "f1", to: "f8" },
+  ]}
+/>
+
+_An absolute pin vs a relative pin. The queen on the left is unable move as doing so would put the king in check. The bishop on the right can move, but if it did, it would expose the more valuable queen behind it to the threat of capture._
+
+The power of a pin lies in the fact that the pinned piece is unable to move at the risk of exposing a more valuable piece (or in the case of an absolute pin, unable to move at all). Thus from there you can start to take advantage of the pin and potentially win the pinned piece or the piece behind it.
+
+Pins can only be executed by the the three long range pieces: the rook, queen and bishop.
+
+The previous example showed the rook orchestrating a pin, here are some more examples:
+
+<Chessboard
+  fen="5k2/p1p2bp1/1p1q3p/1P3p2/1B6/7P/P4PP1/1Q4K1 w - - 0 1"
+  arrows={[{ from: "b4", to: "f8" }]}
+/>
+
+_Here the white bishop has an absolute pin. Black's king and queen are on the same diagonal and so black has no choice to trade its queen for a less valuable piece._
+
+<Chessboard
+  fen="r5k1/p2q1ppp/1pnb4/3Q4/2PN4/1P3PB1/P5PP/4R2K w - - 0 1"
+  arrows={[
+    { from: "d5", to: "a8" },
+    { from: "d5", to: "d7" },
+  ]}
+/>
+
+_This example showcases how powerful a queen can be. Here the queen has two relative pins on black's knight and bishop. If black tries to capture the knight then the rook behind is exposed. If black tries to capture the bishop, then the queen is exposed. This example shows why high-value pieces are not ideal defenders._
+
+## Skewers
+
+Think of skewers as the opposite of pins. Whereas the piece behind the pinned piece is more valuable, in a skewer the more valuable piece is in front. Skewers are effective in winning pieces that are only defended by higher value material.
+
+<Chessboard
+  fen="r2r2k1/5ppp/2P1pq2/p2n2B1/8/6Q1/5PPP/2R2RK1 w - - 0 1"
+  arrows={[{ from: "g5", to: "d8" }]}
+/>
+
+_Here white's bishop has a skewer on black's queen. The queen must get to safety otherwise black is just losing a queen, but doing so exposes the rook on D8 for capture. Black can capture but the bishop is defended by white's queen. This skewer results in rook for bishop trade which is advantageous for white._
+
+Like pins you also have relative skewers and absolute skewers. Absolute skewers involve the king, therefore they cannot be ignored. An absolute skewer guarantees the loss of material, because the defender is forced to either get their king out of check or block the check.
+
+Remember that with skewers, the more valuable piece is in front, so a relative skewer would mean that the high value piece is under attack, and moving the piece would expose a lower value piece.
+
+<Chessboard
+  fen="8/8/p1b2k1R/b2pr3/6R1/4P1P1/2p2P1P/6K1 w - - 0 1"
+  arrows={[{ from: "h6", to: "c6" }]}
+/>
+
+_Here is an example of an absolute skewer. Rook to H6 is check on the king. The king has no pieces to block the check and so has to move, in turn leaving the undefended bishop on C6 to be captured._
+
+<Chessboard
+  fen="8/6p1/3R4/2R5/3k1K2/7p/7P/3q4 w - - 0 1"
+  arrows={[{ from: "d6", to: "d1" }]}
+/>
+
+_This is another absolute skewer. Here black can respond by capturing the white's rook on C5 but the queen's capture is guaranteed and white is winning._
+
+## Discovered attacks
+
+This tactic is employed when you move a piece to reveal a previously blocked threat by another piece. The power of a discovered attack lies in the fact that you can potentially use the moving piece to make a strong threat on its own.
+
+When the piece that moves delivers a check, this is known as a discovered check. Here's an example:
+
+<Chessboard
+  fen="4n1k1/3qr2p/1p2pppB/pQ1P4/6PP/2r3K1/PP3P2/4R2R w - - 0 1"
+  arrows={[
+    { from: "c5", to: "c3", brush: "green" },
+    { from: "d7", to: "b5" },
+    { from: "c3", to: "g3" },
+  ]}
+/>
+
+_The discovery here is the queen that was initially behind the rook on C6. Notice that white's queen is undefended. By moving the rook to C3, giving a check on white's king, black's queen is now threatening capture whereas before, this threat was blocked by the rook. White has to respond to the check by either blocking it or moving the king but either way the queen is lost._
+
+Discoveries are a powerful tactic as you have multiple ways to employ them on the board to gain an advantage.
+
+Here is a position in which white executes a discovery using the moving piece to create a double attack that black can't defend against.
+
+<Chessboard
+  fen="3r2k1/pp3pp1/4q2p/6B1/1n6/1P6/P4PPP/1Q2R1K1 w - - 0 1"
+  arrows={[
+    { from: "e3", to: "g5", brush: "green" },
+    { from: "e1", to: "e6" },
+    { from: "g5", to: "d8" },
+  ]}
+/>
+
+_Bishop to G5 is a discovered attack on black's queen and also an attack on the rook. Black has no way to defend against both and so black's best response is to move the queen to safety and lose the rook._
+
+Discoveries can also be used to capture seemingly protected material.
+
+<PlayMoves moves={queenDiscoveryAttack} />
+
+_The bishop on D5 is seemingly protected by the pawn, but if white captures with the knight then a discovered attack is unveiled against black's queen. Black must move the queen to safety and white can use the extra tempo gained by the discovery to get it's knight back to safety._
+
+## Remove the defender
+
+Removing the defender in chess refers to capturing a piece that is performing a defensive role.
+
+This is a important tactic in chess as it often leads to a material gain or a positional advantage on the board.
+
+<PlayMoves moves={removeTheBishop} />
+
+_Black can take advantage of the fact that white's bishop on D4 is only defended by one piece. By removing it's defender with the bishop, white has to retake with the queen and has no way to defend against it's bishop being captured and black forking both white's king and rook, further losing material._
+
+Being able to recognise when you can employ this tactic comes with time and experience, but a good tip in trying to identify when you can is when you are trying to make an attack.
+
+If there is a piece defending against the attack, look at the position and see if that defending piece is in turn being defended itself, and if so, are you in a position to remove it without new defenders strengthening the original defender.
+
+<PlayMoves moves={removeThePawn} />
+
+_White's rook to G4 is an absolute pin on black's queen, but the square is defended twice by the pawn on F5 and the bishop on C7. White can remove both defenders here but it has to do so in the correct order. Once the defenders are removed, rook to G1 wins black's queen._

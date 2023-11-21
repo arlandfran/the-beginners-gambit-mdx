@@ -1,0 +1,55 @@
+---
+title: Special Moves
+description: Castling, En passant & Promotion explained
+---
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+## Castling
+
+Castling is a special move that involves the king and a rook.
+
+There are two directions to castle in:
+
+**Kingside castling** (castling short) consists of moving the king from **E1** to **G1**, and the rook from **H1** to **F1**.
+
+**Queenside castling** (castling long) consists of moving the king from **E1** to **C1**, and the rook from **A1** to **D1**.
+
+<Castling />
+
+There are several conditions for a player to be able to castle:
+
+- The king and rook involved in castling have not previously moved.
+- There are no pieces between your king and rook.
+- The king is not in check.
+- The king doesn't move through any squares that would put in check after castling nor move through a square attacked by an enemy piece. The rook however can move through or end up in a square being attacked.
+
+<Chessboard
+  fen="rn1qkbnr/pppppppp/8/1b6/8/8/PPP2PPP/RNBQK2R w KQkq - 0 1"
+  arrows={[{ from: "b5", to: "f1" }]}
+/>
+
+_In the above example the king cannot castle as the F1 square is attacked by the black bishop._
+
+## En Passant
+
+En Passant _(in passing)_ is a special pawn capture that occurs when a pawn has advanced two squares and ends up next to an enemy pawn. When this occurs, the enemy pawn can capture the pawn that had moved, capturing “in passing”.
+
+<EnPassant />
+
+_The black D7 pawn moving forward two squares on its first move allows the white E5 pawn to capture it through the "en passant" rule._
+
+## Promotion
+
+When a pawn reaches the 8th rank (or the 1st rank for black), it is promoted to a queen, rook, knight or bishop at the players choice. Pawn promotion can also be a capturing move.
+
+<Promotion />
+
+Keep in mind that the choice is not limited to previously captured pieces, so if you promote another pawn, you can have multiple queens on the board.

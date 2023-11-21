@@ -1,0 +1,137 @@
+---
+title: Movement
+description: How does each piece move on the board
+---
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+export const kingSquares = ["d5", "e5", "e4", "e3", "d3", "c3", "c4", "c5"];
+// prettier-ignore
+export const queenSquares = ["d5","d6","d7","d8","e5","f6","g7","h8","e4","f4","g4","h4","e3","f2","g1","d3","d2","d1","c3","b2","a1","c4","b4","a4","c5","b6","a7",];
+// prettier-ignore
+export const rookSquares = ["d5","d6","d7","d8","e4","f4","g4","h4","d3","d2","d1","c4","b4","a4"]
+// prettier-ignore
+export const bishopSquares = ["e5","f6","g7","h8","e3","f2","g1","c3","b2","a1","c5","b6","a7",];
+// prettier-ignore
+export const knightSquares = ["e6","f5","f3","e2","c2","b3","b5","c6"];
+// prettier-ignore
+export const pawnSquares = ["d3","e3","e4"]
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+## Things to remember
+
+- Pieces cannot move onto squares occupied by their own pieces.
+- Pieces cannot jump over other pieces. The only exceptions are <Link href="/docs/rules/movement#knight">knights</Link> & <Link href="/docs/rules/special-moves#castling">castling</Link>.
+- Pieces can move into vacant squares or squares occupied by opponent pieces by capturing them.
+- If a piece is captured it is permanently removed from the game.
+- The **King** is the only piece that cannot be captured. It can only be put in check and you cannot make any moves that would purposely put the king in check.
+
+<section className="max-w-sm mx-auto">
+
+## King
+
+<Chessboard fen="8/8/8/8/3K4/8/8/8 w - - 0 1">
+  {kingSquares.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+**Movement:** One square horizontally, vertically or diagonally.
+
+**Special moves:** <Link href="/docs/rules/special-moves#castling">Castling</Link>
+
+</section>
+
+<section className="max-w-sm mx-auto">
+
+## Queen
+
+<Chessboard fen="8/8/8/8/3Q4/8/8/8 w - - 0 1">
+  {queenSquares.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+**Movement:** Any number of vacant squares horizontally, vertically or diagonally.
+
+</section>
+
+<section className="max-w-sm mx-auto">
+
+## Rook
+
+<Chessboard fen="8/8/8/8/3R4/8/8/8 w - - 0 1">
+  {rookSquares.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+**Movement:** Any number of vacant squares horizontally or vertically.
+
+**Special moves:** <Link href="/docs/rules/special-moves#castling">Castling</Link>
+
+</section>
+
+<section className="max-w-sm mx-auto">
+
+## Bishop
+
+<Chessboard fen="8/8/8/8/3B4/8/8/8 w - - 0 1">
+  {bishopSquares.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+**Movement:** Any number of vacant squares diagonally.
+
+</section>
+
+<section className="max-w-sm mx-auto">
+
+## Knight
+
+<Chessboard fen="8/8/8/8/3N4/8/8/8 w - - 0 1">
+  {knightSquares.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+**Movement:** Any vacant square not on the same rank, file or diagonal. This is easiest to remember as an L shape.
+
+<Callout title="Note:">
+
+This piece is the only piece that can jump over other pieces, regardless of color.
+
+</Callout>
+
+</section>
+
+<section className="max-w-sm mx-auto">
+
+## Pawn
+
+<Chessboard fen="8/8/8/8/8/8/3PP3/8 w - - 0 1">
+  {pawnSquares.map((square) => (
+    <MoveMarker key={square} slot={square} />
+  ))}
+</Chessboard>
+
+**Movement:** One square forward if it is vacant.
+
+**Special moves:** <Link href="/docs/rules/special-moves#en-passant">En Passant</Link>, <Link href="/docs/rules/special-moves#promotion">Promotion</Link>
+
+<Callout title="Note:">
+
+- This piece cannot move backwards
+- Can only capture diagonnally
+- Has the option to move one or two squares on its first move if the squares are vacant.
+
+</Callout>
+
+</section>

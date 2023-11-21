@@ -1,0 +1,53 @@
+---
+title: Conditions
+description: How do you win a game of chess?
+---
+
+import { resignation } from "@/lib/moves";
+
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
+
+<p className="lead">{meta.description}</p>
+
+## Checkmate
+
+Checkmate is a position on the board where an attacking player has a defending player's king in check and there are:
+
+1. No legal squares to move the defending king to
+2. No pieces to block the attacking piece
+3. No way to capture the attacking piece
+
+If all of these conditions are met, then the defending king cannot avoid capture and it is checkmate.
+
+<Chessboard fen="r4rk1/p1p2ppp/3p4/3Qb3/4N3/7P/5PBq/R1B2R1K w - - 0 1">
+  <CheckMarker slot="h1" />
+</Chessboard>
+
+This is checkmate for white as:
+
+1. It's retreat squares are covered by the black queen
+2. There isn't a piece that's able to capture or block the black queen
+3. The king cannot capture as the black queen is defended by the bishop on E5
+
+## Resignation
+
+A player in a losing position may wish to resign and concede the game if they decide they objectively cannot save the position.
+
+<PlayMoves moves={resignation} />
+
+_Black resigns in this position as after the white queen delivers check on H8, the black king is forced to F7, and after another check on H7, delivers check while also winning black's queen._
+
+## Timeout
+
+It's also possible to lose by timeout if playing with time control.
+
+It doesn't matter how much of an advantage a player may have, if a player has run out of time, and the opponent has the minumum amount of material to force a checkmate - then they lose the game.
+
+If however, the opponent has insufficient material to force a checkmate, then the game is drawn.
+
+Timeout losses are more common in online chess where faster time controls are more popular.
