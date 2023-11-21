@@ -5,7 +5,12 @@ description: The opening, middle and endgame
 
 import { operaGame, openingTempo, gainingTempo } from "@/lib/moves";
 
-# {meta.title}
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 

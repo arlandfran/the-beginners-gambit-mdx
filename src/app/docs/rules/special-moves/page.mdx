@@ -3,7 +3,12 @@ title: Special Moves
 description: Castling, En passant & Promotion explained
 ---
 
-# {meta.title}
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 

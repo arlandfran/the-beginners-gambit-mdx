@@ -11,10 +11,15 @@ import {
   drawByRepitition,
 } from "@/lib/moves";
 
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
 export const whiteKnightMarkers = ["e7", "f6", "f4", "e3", "c3", "b4", "b6", "c7"]; // prettier-ignore
 export const blackKnightMarkers = ["g3", "g7"];
 
-# {meta.title}
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 

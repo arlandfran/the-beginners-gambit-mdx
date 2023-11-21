@@ -5,7 +5,12 @@ description: a.k.a checkmate combinations
 
 import { steinitzGame } from "@/lib/moves";
 
-# {meta.title}
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 

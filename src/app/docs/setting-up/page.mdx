@@ -3,7 +3,12 @@ title: Setting up the chessboard
 description: If you're playing physically that is
 ---
 
-# {meta.title}
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 

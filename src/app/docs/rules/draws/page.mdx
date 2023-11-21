@@ -3,7 +3,12 @@ title: Draws
 description: Stalemate, insufficient material, repitition, fifty-move rule and mutual agreement
 ---
 
-# {meta.title}
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 

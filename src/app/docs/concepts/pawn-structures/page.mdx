@@ -3,6 +3,11 @@ title: Pawn structures
 description: Five basic structures you need to know
 ---
 
+export const metadata = {
+  title: meta.title,
+  description: meta.description,
+};
+
 export const isolatedSquares = ["a7", "b2", "d4"];
 export const doubledSquares = ["e5", "e6", "f2", "f3"];
 export const backwardSquares = ["c6", "e3"];
@@ -10,7 +15,7 @@ export const connectedSquares = ["b7", "c6", "d5", "d4", "e3", "f2"];
 export const islandSquares = ["a2", "b2", "f7", "g7", "h7"];
 export const passedSquares = ["g6", "g7", "g8"];
 
-# {meta.title}
+<h1 id={meta.title.split(" ").join("-").toLowerCase()}>{meta.title}</h1>
 
 <p className="lead">{meta.description}</p>
 
