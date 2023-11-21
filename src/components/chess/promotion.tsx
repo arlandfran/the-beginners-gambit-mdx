@@ -104,7 +104,7 @@ export function Promotion() {
       </PopoverAnchor>
       <PopoverContent
         side="top"
-        sideOffset={-80}
+        sideOffset={-77}
         className="flex w-fit animate-none gap-2"
       >
         <Button onClick={() => handlePromotion("q")} variant="outline">
