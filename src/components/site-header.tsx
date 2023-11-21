@@ -14,7 +14,7 @@ export function SiteHeader() {
           className="hidden font-semibold sm:block"
           aria-label="The Beginner's Gambit"
         >
-          The Beg<span className="-mx-[2px] font-serif">&#9823;&#xFE0E;</span>
+          The Beg<span className="font-serif">&#9823;&#xFE0E;</span>
           nner&apos;s Gambit
         </Link>
         <MobileNav />
