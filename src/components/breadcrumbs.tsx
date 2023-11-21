@@ -18,7 +18,7 @@ export function Breadcrumbs() {
       <div className="mb-4 flex items-center gap-2">
         Docs
         <ChevronRightIcon />
-        <span className="font-bold">Introduction</span>
+        <span className="font-medium text-foreground">Introduction</span>
       </div>
     );
   }
@@ -31,7 +31,9 @@ export function Breadcrumbs() {
             key={index}
             className={cn(
               "flex items-center gap-2",
-              index === segments.length - 1 ? "font-bold" : "",
+              index === segments.length - 1
+                ? "font-medium text-foreground"
+                : "",
             )}
           >
             {segment.split("-").join(" ")}
