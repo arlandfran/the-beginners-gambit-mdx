@@ -12,7 +12,9 @@ export const metadata = {
 
 <p className="lead">{meta.description}</p>
 
-### 1. Orient the board
+<Steps>
+
+### Orient the board
 
 <Chessboard>
   <CircleMarker slot="a8" />
@@ -27,26 +29,28 @@ Two common terms you will encounter regarding the chess board are _ranks_ and _f
 
 </Callout>
 
-### 2. Place the pawns
+### Place the pawns
 
 <Chessboard fen="8/pppppppp/8/8/8/8/PPPPPPPP/8 w - - 0 1" />
 
 White pawns go across the _2nd rank_ and black pawns across the _7th rank_.
 
-### 3. Place the rooks
+### Place the rooks
 
 <Chessboard fen="r6r/pppppppp/8/8/8/8/PPPPPPPP/R6R w - - 0 1" />
 
 Rooks go on the corners of the board on their respective sides.
 
-### 4. Place the knights and bishops
+### Place the knights and bishops
 
 <Chessboard fen="rnb2bnr/pppppppp/8/8/8/8/PPPPPPPP/RNB2BNR w - - 0 1" />
 
 The knight and bishop are what's known as _minor pieces_. The knights go next to the rooks and the bishops the square after.
 
-### 5. Place the king and queen
+### Place the king and queen
 
 <Chessboard fen="start" />
 
 The queen is always placed on a square of it's own color. The king slots into the last remaining square.
+
+</Steps>

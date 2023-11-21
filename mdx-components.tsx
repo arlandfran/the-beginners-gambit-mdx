@@ -53,6 +53,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     PlayMoves,
     Promotion,
     Skeleton,
+    Steps: ({ ...props }: HTMLAttributes<HTMLDivElement>) => (
+      <div
+        className="[&>h3]:step steps ml-4 mt-4 border-l pl-8 [counter-reset:step] [&>h3:first-child]:mt-0"
+        {...props}
+      />
+    ),
     ...components,
   };
 }
