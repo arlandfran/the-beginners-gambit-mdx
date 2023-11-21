@@ -88,6 +88,10 @@
     --move-target-marker-color-light-square: hsl(217 94% 23%);
   }
 
+  g-chess-board::part(arrow-green) {
+    color: hsl(124 70% 28% / 60%);
+  }
+
   .check-marker {
     background: radial-gradient(
       circle,

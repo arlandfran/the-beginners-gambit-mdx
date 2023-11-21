@@ -83,3 +83,34 @@ export const drawByRepitition = [
   "2rb2k1/6p1/4p3/p2n3Q/1pq5/7P/PP4P1/1K1R4 w - - 10 6",
   "2rbQ1k1/6p1/4p3/p2n4/1pq5/7P/PP4P1/1K1R4 b - - 11 6",
 ];
+export const earlyKnightFork = [
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+  "r1bqkb1r/pppp1ppp/2n2n2/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 5 4",
+  "r1bqk2r/pppp1ppp/2n2n2/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R w KQkq - 6 5",
+  "r1bqk2r/pppp1Npp/2n2n2/2b1p3/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 0 5",
+];
+export const pawnFork = [
+  "1r1q1rk1/2pb1ppp/pbnp1n2/1p2p1B1/3PP3/1BP2N1P/PP3PP1/RN1QR1K1 b - - 0 1",
+  "1r1q1rk1/2p2ppp/pbnpbn2/1p2p1B1/3PP3/1BP2N1P/PP3PP1/RN1QR1K1 w - - 1 2",
+  "1r1q1rk1/2p2ppp/pbnpbn2/1p1Pp1B1/4P3/1BP2N1P/PP3PP1/RN1QR1K1 b - - 0 2",
+];
+export const queenDiscoveryAttack = [
+  "4rrk1/pp1nqppp/2p2n2/3b4/3P4/3BNQ2/PP1BRPPP/4R1K1 w - - 0 1",
+  "4rrk1/pp1nqppp/2p2n2/3N4/3P4/3B1Q2/PP1BRPPP/4R1K1 b - - 0 1",
+  "3qrrk1/pp1n1ppp/2p2n2/3N4/3P4/3B1Q2/PP1BRPPP/4R1K1 w - - 1 2",
+  "3qrrk1/pp1n1ppp/2p2n2/8/3P1N2/3B1Q2/PP1BRPPP/4R1K1 b - - 2 2",
+];
+export const removeTheBishop = [
+  "r3k2r/ppp2ppp/5q2/2b1n3/3B4/1P1b2PP/P1PNN1B1/R2Q2KR b kq - 0 1",
+  "r3k2r/ppp2ppp/5q2/2b1n3/3B4/1P4PP/P1PNb1B1/R2Q2KR w kq - 0 2",
+  "r3k2r/ppp2ppp/5q2/2b1n3/3B4/1P4PP/P1PNQ1B1/R5KR b kq - 0 2",
+  "r3k2r/ppp2ppp/5q2/4n3/3b4/1P4PP/P1PNQ1B1/R5KR w kq - 0 3",
+];
+export const removeThePawn = [
+  "3r2k1/nppbRpqp/p2p4/2bP1p2/7R/3Q1BP1/P4P1P/6K1 w - - 0 1",
+  "3r2k1/nppR1pqp/p2p4/2bP1p2/7R/3Q1BP1/P4P1P/6K1 b - - 0 1",
+  "6k1/nppr1pqp/p2p4/2bP1p2/7R/3Q1BP1/P4P1P/6K1 w - - 0 2",
+  "6k1/nppr1pqp/p2p4/2bP1Q2/7R/5BP1/P4P1P/6K1 b - - 0 2",
+  "6k1/npp1rpqp/p2p4/2bP1Q2/7R/5BP1/P4P1P/6K1 w - - 1 3",
+  "6k1/npp1rpqp/p2p4/2bP1Q2/6R1/5BP1/P4P1P/6K1 b - - 2 3",
+];
