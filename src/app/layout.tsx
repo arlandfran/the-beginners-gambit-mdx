@@ -36,7 +36,7 @@ export default function RootLayout({
           <SiteHeader />
           <div className="container flex flex-1 gap-8">
             <SidebarNav />
-            <main className="prose prose-sm prose-slate mx-auto w-full py-8 dark:prose-invert prose-h1:mb-0 prose-lead:my-0">
+            <main className="prose prose-sm prose-slate mx-auto w-full py-8 dark:prose-invert prose-h1:mb-0 prose-hr:my-4 prose-lead:my-0">
               <Breadcrumbs />
               {children}
               <Pager />
