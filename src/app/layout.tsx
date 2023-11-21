@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Pager } from "@/components/pager";
 import { SidebarNav } from "@/components/sidebar-nav";
 import { SiteHeader } from "@/components/site-header";
+import { TableOfContents } from "@/components/table-of-contents";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -36,11 +37,12 @@ export default function RootLayout({
           <SiteHeader />
           <div className="container flex flex-1 justify-center gap-8 xl:gap-16">
             <SidebarNav />
-            <main className="prose prose-sm prose-slate py-8 dark:prose-invert prose-h1:mb-0 prose-hr:my-4 prose-lead:my-0">
+            <main className="content prose prose-sm prose-slate py-8 dark:prose-invert prose-headings:scroll-mt-24 prose-h1:mb-0 prose-hr:my-4 prose-lead:my-0">
               <Breadcrumbs />
               {children}
               <Pager />
             </main>
+            <TableOfContents />
           </div>
         </ThemeProvider>
       </body>
