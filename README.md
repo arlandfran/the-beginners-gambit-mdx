@@ -1,6 +1,6 @@
 # The Beginner's Gambit
 
-An updated version of an old project originally written in pure HTML and CSS, now rewritten using Next.js and MDX.
+An updated version of an old project originally written in pure HTML and CSS, now rewritten using Next.js, MDX and gchessboard.
 
 [Original repo](https://github.com/arlandfran/the-beginners-gambit)
 
