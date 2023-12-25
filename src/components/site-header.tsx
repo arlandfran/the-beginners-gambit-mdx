@@ -20,7 +20,7 @@ export function SiteHeader() {
         <MobileNav />
         <div className="flex h-9 items-center gap-2">
           <a
-            href="https://github.com/arlandfran/the-beginners-gambit"
+            href="https://github.com/arlandfran/the-beginners-gambit-mdx"
             target="_blank"
             rel="noopener noreferrer"
             className={buttonVariants({ variant: "ghost", size: "icon" })}
